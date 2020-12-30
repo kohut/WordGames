@@ -1,20 +1,18 @@
+import english_words
+from english_words import english_words_lower_alpha_set as all_words
 
 def SpellingBee(letters, key_letter):
     #Empty array to hold all the solutions
     solutions = []
 
     #Dictionary of all the words
-    dictionary = open("/usr/share/dict/words", 'r')
+    #dictionary = open("/usr/share/dict/words", 'r')
 
     ## Loop through the dictionary
-    for word in dictionary:
+    for word in all_words:
 
-    ## Make sure the word has length >= 4
-        if len(word) > 4:
-            word = word.strip('\n')
-
-    ## Make sure the key letter is in the word
-        if key_letter in word:
+    ## Make sure word is long enough and the key letter is in the word
+        if len(word) >= 4 and key_letter in word:
         #Make sure each letter of the word is in the set "letters"
             # Assume the word is good
             letter_flag = True
@@ -30,7 +28,7 @@ def SpellingBee(letters, key_letter):
     ## Return the solution set
     return(solutions)
 
-solutions = SpellingBee('acghlne', 'e')
+solutions = SpellingBee('trkacdp', 't')
 print(solutions)
 print(len(solutions))
 
