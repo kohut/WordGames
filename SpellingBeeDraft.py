@@ -11,6 +11,8 @@ def SpellingBee(letters, key_letter):
         if len(word) >= 4 and key_letter in word and letters >= set(word):
             solutions.append(word)
     ## Return the solution set
+
+    solutions = sorted(solutions, key=len)
     return(solutions)
 
 solutions = SpellingBee('trkacdp', 't')
