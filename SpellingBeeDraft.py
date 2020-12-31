@@ -14,8 +14,7 @@ def SpellingBee(letters, key_letter):
     ## Make sure word is long enough and the key letter is in the word
         if len(word) >= 4 and key_letter in word and letters >= set(word):
             solutions.append(word)
-    ## Return the solution set
-
+    # Sort the solution set by length for readability
     solutions = sorted(solutions, key=len)
     return(solutions)
 
