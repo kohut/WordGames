@@ -1,6 +1,3 @@
-import english_words
-#from english_words import english_words_lower_alpha_set as all_words
-
 def SpellingBee(letters, key_letter):
     #Empty array to hold all the solutions
     solutions = []
