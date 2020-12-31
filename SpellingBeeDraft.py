@@ -1,10 +1,17 @@
 import english_words
-from english_words import english_words_lower_alpha_set as all_words
+#from english_words import english_words_lower_alpha_set as all_words
 
 def SpellingBee(letters, key_letter):
     #Empty array to hold all the solutions
     solutions = []
     letters = frozenset(letters)
+
+    # List of words
+    f = open("scrabble_words.txt", "r")
+    words = f.read().strip().split("\n")
+    all_words = [word.lower().replace('\r', '') for word in words]
+    f.close()
+
     ## Loop through the dictionary
     for word in all_words:
     ## Make sure word is long enough and the key letter is in the word
@@ -15,7 +22,7 @@ def SpellingBee(letters, key_letter):
     solutions = sorted(solutions, key=len)
     return(solutions)
 
-solutions = SpellingBee('trkacdp', 't')
+solutions = SpellingBee('xautcne', 'e')
 print(solutions)
 print(len(solutions))
 
